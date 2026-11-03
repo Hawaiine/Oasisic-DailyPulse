@@ -13,23 +13,50 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      
-      - name: Build Docker image
-        uses: docker/build-push-action@v5
+
+      - name: Build and load Docker image
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: false
-          tags: oasisic-dailypulse:latest
+          load: true
+          tags: oasisic-dailypulse:ci
           cache-from: type=gha
           cache-to: type=gha,mode=max
-      
-      - name: Test image
+
+      - name: Smoke test container
         run: |
-          docker run -d --name test -p 8790:8790 -e PULSE_TOKEN=test-token oasisic-dailypulse:latest
-          sleep 5
-          curl -f -H "x-pulse-token: test-token" http://localhost:8790/api/sources || exit 1
-          docker stop test
-          echo "✓ Docker image works"
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/dp-data"
+          docker run -d --name dp-ci \
+            -p 8790:8790 \
+            -e PULSE_TOKEN=ci-test-token \
+            -v "$RUNNER_TEMP/dp-data:/app/data" \
+            oasisic-dailypulse:ci
+          for i in $(seq 1 30); do
+            if curl -fsS -m 5 -H "x-pulse-token: ci-test-token" \
+                 http://localhost:8790/api/sources > "$RUNNER_TEMP/sources.json"; then
+              echo "API responded after ${i}s"
+              break
+            fi
+            sleep 2
+          done
+          echo "--- container logs ---"
+          docker logs dp-ci
+          echo "--- payload ---"
+          head -c 500 "$RUNNER_TEMP/sources.json"; echo
+          python3 -c "
+          import json, os
+          p = os.environ['RUNNER_TEMP'] + '/sources.json'
+          d = json.load(open(p))
+          assert d.get('ok') is True, 'api not ok: ' + str(d)[:300]
+          print('sources count:', len(d.get('sources', {})))
+          "
+          docker rm -f dp-ci
+
+      - name: Dump container logs on failure
+        if: failure()
+        run: docker logs dp-ci || true
