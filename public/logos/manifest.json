@@ -1,0 +1,251 @@
+{
+  "weibo": {
+    "file": "/logos/weibo.png",
+    "bytes": 14048,
+    "w": 192,
+    "h": 192
+  },
+  "zhihu": {
+    "file": "/logos/zhihu.png",
+    "bytes": 24756,
+    "w": 192,
+    "h": 192
+  },
+  "baidu": {
+    "file": "/logos/baidu.png",
+    "bytes": 15376,
+    "w": 192,
+    "h": 192
+  },
+  "douyin": {
+    "file": "/logos/douyin.png",
+    "bytes": 15694,
+    "w": 192,
+    "h": 192
+  },
+  "toutiao": {
+    "file": "/logos/toutiao.png",
+    "bytes": 8276,
+    "w": 256,
+    "h": 256
+  },
+  "tieba": {
+    "file": "/logos/tieba.png",
+    "bytes": 23732,
+    "w": 192,
+    "h": 192
+  },
+  "douban-movie": {
+    "file": "/logos/douban-movie.png",
+    "bytes": 18023,
+    "w": 192,
+    "h": 192
+  },
+  "thepaper": {
+    "file": "/logos/thepaper.png",
+    "bytes": 34894,
+    "w": 192,
+    "h": 192
+  },
+  "wallstreetcn": {
+    "file": "/logos/wallstreetcn.png",
+    "bytes": 4120,
+    "w": 200,
+    "h": 200
+  },
+  "36kr": {
+    "file": "/logos/36kr.png",
+    "bytes": 747,
+    "w": 192,
+    "h": 192
+  },
+  "ithome": {
+    "file": "/logos/ithome.png",
+    "bytes": 8004,
+    "w": 192,
+    "h": 192
+  },
+  "tencent": {
+    "file": "/logos/tencent.png",
+    "bytes": 3497,
+    "w": 96,
+    "h": 96
+  },
+  "netease": {
+    "file": "/logos/netease.png",
+    "bytes": 13386,
+    "w": 192,
+    "h": 192
+  },
+  "sina": {
+    "file": "/logos/sina.png",
+    "bytes": 18444,
+    "w": 192,
+    "h": 192
+  },
+  "zhihu-daily": {
+    "file": "/logos/zhihu-daily.png",
+    "bytes": 21881,
+    "w": 192,
+    "h": 192
+  },
+  "hackernews": {
+    "file": "/logos/hackernews.png",
+    "bytes": 3703,
+    "w": 192,
+    "h": 192
+  },
+  "github": {
+    "file": "/logos/github.png",
+    "bytes": 22520,
+    "w": 192,
+    "h": 192
+  },
+  "juejin": {
+    "file": "/logos/juejin.png",
+    "bytes": 5928,
+    "w": 180,
+    "h": 180
+  },
+  "sspai": {
+    "file": "/logos/sspai.png",
+    "bytes": 9665,
+    "w": 192,
+    "h": 192
+  },
+  "bilibili": {
+    "file": "/logos/bilibili.png",
+    "bytes": 30507,
+    "w": 192,
+    "h": 192
+  },
+  "x": {
+    "file": "/logos/x.png",
+    "bytes": 15219,
+    "w": 192,
+    "h": 192
+  },
+  "gcores": {
+    "file": "/logos/gcores.png",
+    "bytes": 18113,
+    "w": 192,
+    "h": 192
+  },
+  "gamersky": {
+    "file": "/logos/gamersky.png",
+    "bytes": 25715,
+    "w": 192,
+    "h": 192
+  },
+  "3dm": {
+    "file": "/logos/3dm.png",
+    "bytes": 779
+  },
+  "mydrivers": {
+    "file": "/logos/mydrivers.png",
+    "bytes": 35143,
+    "w": 192,
+    "h": 192
+  },
+  "producthunt": {
+    "file": "/logos/producthunt.png",
+    "bytes": 7600,
+    "w": 192,
+    "h": 192
+  },
+  "sina-tech": {
+    "file": "/logos/sina-tech.png",
+    "bytes": 28430,
+    "w": 192,
+    "h": 192
+  },
+  "bbc-zh": {
+    "file": "/logos/bbc-zh.ico",
+    "bytes": 15086
+  },
+  "nyt-zh": {
+    "file": "/logos/nyt-zh.png",
+    "bytes": 1845,
+    "w": 144,
+    "h": 144
+  },
+  "xhs": {
+    "file": "/logos/xhs.png",
+    "bytes": 12180,
+    "w": 192,
+    "h": 192
+  },
+  "_updated": 1793696049,
+  "smzdm": {
+    "file": "/logos/smzdm.png",
+    "bytes": 32950,
+    "w": 192,
+    "h": 192
+  },
+  "weread": {
+    "file": "/logos/weread.png",
+    "bytes": 12154,
+    "w": 192,
+    "h": 192
+  },
+  "hupu": {
+    "file": "/logos/hupu.png",
+    "bytes": 27634,
+    "w": 192,
+    "h": 192
+  },
+  "kuaishou": {
+    "file": "/logos/kuaishou.png",
+    "bytes": 23817,
+    "w": 192,
+    "h": 192
+  },
+  "huxiu": {
+    "file": "/logos/huxiu.png",
+    "bytes": 9240,
+    "w": 192,
+    "h": 192
+  },
+  "ifanr": {
+    "file": "/logos/ifanr.png",
+    "bytes": 7466,
+    "w": 192,
+    "h": 192
+  },
+  "acfun": {
+    "file": "/logos/acfun.png",
+    "bytes": 40757,
+    "w": 192,
+    "h": 192
+  },
+  "v2ex": {
+    "file": "/logos/v2ex.png",
+    "bytes": 11233,
+    "w": 192,
+    "h": 192
+  },
+  "guokr": {
+    "file": "/logos/guokr.png",
+    "bytes": 14815,
+    "w": 192,
+    "h": 192
+  },
+  "ngabbs": {
+    "file": "/logos/ngabbs.png",
+    "bytes": 32531,
+    "w": 192,
+    "h": 192
+  },
+  "dm3": {
+    "file": "/logos/dm3.png",
+    "bytes": 25468,
+    "w": 192,
+    "h": 192
+  },
+  "zaobao": {
+    "file": "/logos/zaobao.png",
+    "bytes": 3093,
+    "w": 192,
+    "h": 192
+  }
+}

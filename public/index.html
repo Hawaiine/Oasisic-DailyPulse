@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Oasisic DailyPulse · 全平台热点聚合</title>
+<meta name="description" content="微博、知乎、百度、抖音、今日头条、B站、澎湃、36氪、IT之家、GitHub、Hacker News、X 等平台热榜聚合，跨平台合并同一事件。" />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0d0f12" media="(prefers-color-scheme: dark)" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<link rel="icon" href="/icons/icon-192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="/icons/icon-192.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Oasisic DailyPulse" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<link rel="stylesheet" href="/app.css?v=20" />
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="brand" href="/" aria-label="每日热搜榜 首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><path d="M17.8 5.6c.5 3.3-1.3 4.7-2.7 6.2-1.3 1.4-2.4 2.7-1.4 5 .3-2 1.6-2.9 2.6-3.9.4 2.4 2.6 3.3 3.7 5.1 1.4 2.2.4 5.2-2.3 6.6 5-.4 7.6-3.5 7.6-7.1 0-5-3.7-8.5-7.5-12z" fill="#fff"/></svg>
+      </span>
+      <span class="brand-t"><b>每日热搜榜</b><i>DAILY PULSE</i></span>
+    </a>
+
+    <nav class="pills" id="pills" aria-label="分类"></nav>
+
+    <div class="tools">
+      <div class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
+        <input id="q" type="search" placeholder="搜索全平台热榜" autocomplete="off" aria-label="搜索" />
+        <kbd>⌘K</kbd>
+      </div>
+      <button class="icon" id="install" title="安装到桌面" aria-label="安装应用" hidden>
+        <svg viewBox="0 0 24 24"><path d="M12 3v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 20h14"/></svg>
+      </button>
+      <div class="theme-wrap">
+        <button class="icon" id="theme" title="主题" aria-label="主题" aria-haspopup="menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor" stroke="none"/></svg>
+        </button>
+        <div class="theme-pop hidden" id="themePop" role="menu" aria-label="主题模式">
+          <button type="button" role="menuitemradio" data-mode="system"><i></i>跟随系统</button>
+          <button type="button" role="menuitemradio" data-mode="light"><i></i>浅色</button>
+          <button type="button" role="menuitemradio" data-mode="dark"><i></i>深色</button>
+        </div>
+      </div>
+      <button class="icon" id="refresh" title="刷新" aria-label="刷新">
+        <svg viewBox="0 0 24 24"><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1"/><path d="M20.5 4v6h-6"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="ticker" aria-label="最新快讯">
+  <span class="ticker-tag">快讯</span>
+  <div class="ticker-view"><div class="ticker-track" id="tickerTrack"></div></div>
+</div>
+
+<main class="wrap">
+  <section class="focus" id="focus">
+    <div class="focus-l">
+      <span class="focus-k">跨平台焦点</span>
+      <a class="focus-t" id="focusTitle" href="/">正在汇总…</a>
+      <div class="focus-p" id="focusPlats"></div>
+    </div>
+    <div class="focus-r" id="focusMeta">—</div>
+  </section>
+
+  <div class="srcbar" id="srcbar" aria-label="数据源"></div>
+
+  <div class="head">
+    <h1 id="title">全部热榜</h1>
+    <span class="meta" id="meta">正在连接…</span>
+    <span class="meta cd" id="cd"></span>
+    <button class="new-pill hidden" id="newPill"></button>
+  </div>
+
+  <div class="grid" id="grid">
+    <article class="card sk"></article>
+    <article class="card sk"></article>
+    <article class="card sk"></article>
+    <article class="card sk"></article>
+    <article class="card sk"></article>
+    <article class="card sk"></article>
+  </div>
+</main>
+
+<button class="totop hidden" id="toTop" aria-label="回到顶部"><svg viewBox="0 0 24 24"><path d="M12 19V6"/><path d="M6 12l6-6 6 6"/></svg></button>
+
+<footer class="foot">
+  <span>每日热搜榜 · 全平台热榜聚合 · 数据每 1–5 分钟更新 · 内容版权归各平台</span>
+</footer>
+
+
+<div class="sheet hidden" id="sheet" role="dialog" aria-modal="true" aria-label="数据源">
+  <div class="sheet-box">
+    <div class="grab"></div>
+    <h3>数据源</h3>
+    <div class="sheet-list" id="sheetList"></div>
+    <div class="sheet-actions"><button class="btn" id="sheetRefresh">立即刷新</button><button class="btn" id="sheetTheme">主题：<span id="themeLabel">跟随系统</span></button></div>
+  </div>
+</div>
+
+<div class="palette hidden" id="palette" role="dialog" aria-modal="true" aria-label="命令面板">
+  <div class="palette-box">
+    <input id="pq" placeholder="跳转数据源 / 搜索…" autocomplete="off" />
+    <div class="palette-list" id="plist"></div>
+  </div>
+</div>
+
+<script type="module" src="/app.js?v=1793718632"></script>
+
+    <div class="sheet hidden" id="ticker-sheet">
+      <div class="sheet-backdrop"></div>
+      <div class="sheet-panel">
+        <div class="sheet-head">
+          <h2>快讯时间线</h2>
+          <button class="icon sheet-close" aria-label="关闭">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+        <div class="sheet-body" id="ticker-list"></div>
+      </div>
+    </div>
+
+</body>
+</html>

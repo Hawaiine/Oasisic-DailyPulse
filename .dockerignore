@@ -1,0 +1,13 @@
+node_modules
+.git
+.github
+*.log
+*.md
+.env
+.env.local
+data/
+worker/
+public/*.bak*
+src/**/*.bak*
+*.old
+.DS_Store

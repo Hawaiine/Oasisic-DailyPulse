@@ -1,0 +1,30 @@
+{
+  "name": "oasisic-dailypulse",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "types": "wrangler types",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "test:e2e:live": "BASE_URL=https://news.noah-hermes.workers.dev playwright test",
+    "test:all": "npm run typecheck && npm test && npm run test:e2e",
+    "build:server": "esbuild src/server/index.ts --bundle --platform=node --format=esm --target=node22 --outfile=dist/server.mjs",
+    "start": "node dist/server.mjs"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261023.1",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.6",
+    "esbuild": "^0.28.2",
+    "typescript": "^5.7.0",
+    "vitest": "^5.0.5",
+    "wrangler": "^4.156.0"
+  },
+  "dependencies": {
+    "playwright": "^1.64.1"
+  },
+  "description": "Oasisic DailyPulse - 全平台热点聚合"
+}

@@ -1,0 +1,165 @@
+{
+ "weibo": {
+  "file": "/logos/weibo.png",
+  "bytes": 14048,
+  "w": 192,
+  "h": 192
+ },
+ "zhihu": {
+  "file": "/logos/zhihu.png",
+  "bytes": 24756,
+  "w": 192,
+  "h": 192
+ },
+ "baidu": {
+  "file": "/logos/baidu.png",
+  "bytes": 15376,
+  "w": 192,
+  "h": 192
+ },
+ "douyin": {
+  "file": "/logos/douyin.png",
+  "bytes": 15694,
+  "w": 192,
+  "h": 192
+ },
+ "toutiao": {
+  "file": "/logos/toutiao.png",
+  "bytes": 8276,
+  "w": 256,
+  "h": 256
+ },
+ "tieba": {
+  "file": "/logos/tieba.png",
+  "bytes": 23732,
+  "w": 192,
+  "h": 192
+ },
+ "douban-movie": {
+  "file": "/logos/douban-movie.png",
+  "bytes": 18023,
+  "w": 192,
+  "h": 192
+ },
+ "thepaper": {
+  "file": "/logos/thepaper.ico",
+  "bytes": 4286
+ },
+ "wallstreetcn": {
+  "file": "/logos/wallstreetcn.png",
+  "bytes": 4120,
+  "w": 200,
+  "h": 200
+ },
+ "36kr": {
+  "file": "/logos/36kr.png",
+  "bytes": 879
+ },
+ "ithome": {
+  "file": "/logos/ithome.png",
+  "bytes": 1478,
+  "w": 180,
+  "h": 180
+ },
+ "tencent": {
+  "file": "/logos/tencent.png",
+  "bytes": 3497,
+  "w": 96,
+  "h": 96
+ },
+ "netease": {
+  "file": "/logos/netease.png",
+  "bytes": 13386,
+  "w": 192,
+  "h": 192
+ },
+ "sina": {
+  "file": "/logos/sina.png",
+  "bytes": 18444,
+  "w": 192,
+  "h": 192
+ },
+ "zhihu-daily": {
+  "file": "/logos/zhihu-daily.ico",
+  "bytes": 1406
+ },
+ "hackernews": {
+  "file": "/logos/hackernews.svg",
+  "bytes": 196,
+  "w": 0,
+  "h": 0
+ },
+ "github": {
+  "file": "/logos/github.png",
+  "bytes": 15842,
+  "w": 192,
+  "h": 192
+ },
+ "juejin": {
+  "file": "/logos/juejin.png",
+  "bytes": 5928,
+  "w": 180,
+  "h": 180
+ },
+ "sspai": {
+  "file": "/logos/sspai.png",
+  "bytes": 1980,
+  "w": 64,
+  "h": 64
+ },
+ "bilibili": {
+  "file": "/logos/bilibili.png",
+  "bytes": 30507,
+  "w": 192,
+  "h": 192
+ },
+ "x": {
+  "file": "/logos/x.png",
+  "bytes": 549
+ },
+ "gcores": {
+  "file": "/logos/gcores.png",
+  "bytes": 1572,
+  "w": 180,
+  "h": 180
+ },
+ "gamersky": {
+  "file": "/logos/gamersky.png",
+  "bytes": 315
+ },
+ "3dm": {
+  "file": "/logos/3dm.png",
+  "bytes": 779
+ },
+ "mydrivers": {
+  "file": "/logos/mydrivers.png",
+  "bytes": 2258
+ },
+ "producthunt": {
+  "file": "/logos/producthunt.ico",
+  "bytes": 238142
+ },
+ "sina-tech": {
+  "file": "/logos/sina-tech.png",
+  "bytes": 18444,
+  "w": 192,
+  "h": 192
+ },
+ "bbc-zh": {
+  "file": "/logos/bbc-zh.ico",
+  "bytes": 15086
+ },
+ "nyt-zh": {
+  "file": "/logos/nyt-zh.png",
+  "bytes": 1845,
+  "w": 144,
+  "h": 144
+ },
+ "xhs": {
+  "file": "/logos/xhs.png",
+  "bytes": 12180,
+  "w": 192,
+  "h": 192
+ },
+ "_updated": 1793696049
+}

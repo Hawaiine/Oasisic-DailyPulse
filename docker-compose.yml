@@ -1,0 +1,19 @@
+services:
+  dailypulse:
+    build: .
+    container_name: oasisic-dailypulse
+    restart: unless-stopped
+    ports:
+      - "8790:8790"
+    environment:
+      - NODE_ENV=production
+      - PORT=8790
+      - PULSE_TOKEN=${PULSE_TOKEN:-your-secret-token}
+    volumes:
+      - ./data:/app/data
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:8790/api/sources"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
