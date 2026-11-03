@@ -36,25 +36,32 @@ jobs:
             -e PULSE_TOKEN=ci-test-token \
             -v "$RUNNER_TEMP/dp-data:/app/data" \
             oasisic-dailypulse:ci
+
+          ok=0
           for i in $(seq 1 30); do
             if curl -fsS -m 5 -H "x-pulse-token: ci-test-token" \
-                 http://localhost:8790/api/sources > "$RUNNER_TEMP/sources.json"; then
-              echo "API responded after ${i}s"
+                 http://localhost:8790/api/sources -o "$RUNNER_TEMP/sources.json"; then
+              echo "API responded after ${i} attempt(s)"
+              ok=1
               break
             fi
             sleep 2
           done
+
           echo "--- container logs ---"
-          docker logs dp-ci
-          echo "--- payload ---"
-          head -c 500 "$RUNNER_TEMP/sources.json"; echo
-          python3 -c "
-          import json, os
-          p = os.environ['RUNNER_TEMP'] + '/sources.json'
-          d = json.load(open(p))
-          assert d.get('ok') is True, 'api not ok: ' + str(d)[:300]
-          print('sources count:', len(d.get('sources', {})))
-          "
+          docker logs dp-ci || true
+          if [ "$ok" -ne 1 ]; then
+            echo "::error::API did not respond within 60s"
+            exit 1
+          fi
+
+          python3 - "$RUNNER_TEMP/sources.json" <<'PYCHECK'
+          import json, sys
+          d = json.load(open(sys.argv[1]))
+          assert d.get("ok") is True, "api not ok: " + str(d)[:300]
+          print("sources count:", len(d.get("sources", {})))
+          PYCHECK
+
           docker rm -f dp-ci
 
       - name: Dump container logs on failure
