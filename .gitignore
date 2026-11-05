@@ -62,3 +62,8 @@ coverage/
 /tmp/
 *.tmp
 xhs-*
+
+# temp patch scripts
+_patch*.py
+_p*.py
+_dom*.js

@@ -52,6 +52,9 @@ const HOSTS: Record<string, string[]> = {
   xhs: ['xiaohongshu.com'],
   bilibili: ['bilibili.com'],
   'bilibili-hot': ['bilibili.com'],
+  mashdigi: ['mashdigi.com'],
+  landian: ['landian.news'],
+  biggo: ['biggo.com.tw'],
 };
 
 /** 平台自带标签归一化：只保留真正的角标（热/新/沸/爆/荐/辟谣/解读），其余（时间、作者名）丢弃 */
