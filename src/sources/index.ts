@@ -2,7 +2,6 @@ import type { Source } from '../types';
 import { socialSources } from './social';
 import { newsSources } from './news';
 import { techSources } from './tech';
-import mashdigi from './mashdigi';
 
 export const sources: Source[] = [...socialSources, ...newsSources, ...techSources];
 

@@ -1,5 +1,6 @@
 import type { HotItem, Source } from '../types';
 import { clip, getJSON, getText, parseHot, unescapeHtml } from '../lib/http';
+import mashdigi from './mashdigi';
 
 const github: Source = {
   id: 'github',
@@ -314,4 +315,6 @@ const guokr: Source = {
     })).filter((x: any) => x.title);
   }
 };
-export const techSources: Source[] = [bilibiliHot, github, juejin, sspai, bilibili, gcores, gamersky, dm3, mydrivers, huxiu, ifanr, v2ex, guokr];
+export const techSources: Source[] = [bilibiliHot, github, juejin, sspai, bilibili, gcores, gamersky, dm3, mydrivers, huxiu, ifanr, v2ex, guokr,
+  mashdigi
+];
