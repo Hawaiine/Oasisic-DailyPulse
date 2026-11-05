@@ -1,5 +1,6 @@
 import type { HotItem, Source } from '../types';
 import { clip, getJSON, getText, parseHot, unescapeHtml } from '../lib/http';
+import biggo from './biggo';
 
 const thepaper: Source = {
   id: 'thepaper',
@@ -281,4 +282,6 @@ const nytZh: Source = {
   },
 };
 
-export const newsSources: Source[] = [thepaper, wallstreetcn, kr36, ithome, tencent, netease, sina, zhihuDaily, sinaTech, bbcZh, nytZh];
+export const newsSources: Source[] = [thepaper, wallstreetcn, kr36, ithome, tencent, netease, sina, zhihuDaily, sinaTech, bbcZh, nytZh,
+  biggo
+];

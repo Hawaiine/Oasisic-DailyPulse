@@ -251,5 +251,13 @@
   "mashdigi": {
     "file": "mashdigi.png",
     "name": "MashDigi"
+  },
+  "landian": {
+    "file": "landian.png",
+    "name": "蓝点网"
+  },
+  "biggo": {
+    "file": "biggo.png",
+    "name": "BigGo财经"
   }
 }

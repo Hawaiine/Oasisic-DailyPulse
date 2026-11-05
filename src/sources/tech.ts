@@ -1,6 +1,7 @@
 import type { HotItem, Source } from '../types';
 import { clip, getJSON, getText, parseHot, unescapeHtml } from '../lib/http';
 import mashdigi from './mashdigi';
+import landian from './landian';
 
 const github: Source = {
   id: 'github',
@@ -317,4 +318,6 @@ const guokr: Source = {
 };
 export const techSources: Source[] = [bilibiliHot, github, juejin, sspai, bilibili, gcores, gamersky, dm3, mydrivers, huxiu, ifanr, v2ex, guokr,
   mashdigi
+,
+  landian
 ];
