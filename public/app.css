@@ -18,6 +18,29 @@
   --gold: #b0730a;
   --r: 12px;
   --r-sm: 6px;
+  /* 表面层次（z-depth simulation via subtle bg shifts） */
+  --surface-0: var(--bg);
+  --surface-1: color-mix(in srgb, var(--card) 98%, var(--bg));
+  --surface-2: var(--card);
+  --surface-3: color-mix(in srgb, var(--card) 98%, #000);
+  --surface-4: color-mix(in srgb, var(--card) 96%, #000);
+
+  /* 间距韵律（4的倍数） */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+
+  /* 流体字阶 */
+  --font-base: clamp(14px, 0.9vw + 4px, 17px);
+  --font-sm: clamp(12px, 0.55vw + 6px, 14px);
+  --font-xs: clamp(10px, 0.4vw + 5px, 12px);
+  --font-h3: clamp(13px, 0.7vw + 7px, 16px);
+  --font-h2: clamp(16px, 1vw + 8px, 20px);
   --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI Variable Text", "Segoe UI",
           system-ui, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei",
           "Noto Sans CJK SC", "Source Han Sans SC", "Roboto", sans-serif;
@@ -46,7 +69,7 @@
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
 body {
   margin: 0; background: var(--bg); color: var(--ink);
-  font: 400 15px/1.7 var(--sans);
+  font: 400 var(--font-base)/1.7 var(--sans);
   -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility; font-kerning: normal;
   font-variant-numeric: tabular-nums;
@@ -61,8 +84,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 /* ---------- 顶栏 ---------- */
 .bar { position: sticky; top: 0; z-index: 60; background: color-mix(in srgb, var(--bg) 86%, transparent);
   backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid var(--line); }
-.bar-in { max-width: 1200px; margin: 0 auto; height: 56px; padding: 0 24px;
-  display: flex; align-items: center; gap: 18px; }
+.bar-in { max-width: 1200px; margin: 0 auto; height: 56px; padding: 0 var(--space-6);
+  display: flex; align-items: center; gap: var(--space-4); }
 .brand { display: flex; align-items: center; gap: 9px; flex: none; }
 .mark { width: 26px; height: 26px; border-radius: var(--r-sm); display: grid; place-items: center;
   background: linear-gradient(150deg, #f0503a, #d42c12);
@@ -132,7 +155,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 .wrap { max-width: 1200px; margin: 0 auto; padding: 14px 24px 40px; }
 
 /* 焦点条 */
-.focus { display: flex; align-items: center; gap: 18px; background: var(--card); border: 1px solid var(--line);
+.focus { display: flex; align-items: center; gap: var(--space-4); background: var(--card); border: 1px solid var(--line);
   border-radius: var(--r); padding: 10px 14px; margin-bottom: 14px; }
 .focus-l { min-width: 0; flex: 1; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .focus-k { flex: none; font-size: 10.5px; font-weight: 600; letter-spacing: 0.04em; color: var(--accent);
@@ -149,7 +172,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 .srcbar.more { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 34px), transparent);
   mask-image: linear-gradient(to right, #000 calc(100% - 34px), transparent); }
 .srcbar::-webkit-scrollbar { display: none; }
-.chip { flex: none; display: inline-flex; align-items: center; gap: 7px; height: 28px;
+.chip { flex: none; display: inline-flex; align-items: center; gap: 7px; height: 28px; transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   padding: 0 9px; border-radius: var(--r-sm); border: 1px solid transparent; background: transparent;
   font: 500 13px/1 var(--sans); color: var(--mut); white-space: nowrap; transition: background .14s, color .14s; }
 .chip img { width: 16px; height: 16px; border-radius: var(--r-sm); object-fit: contain; flex: none; }
@@ -197,13 +220,17 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 @media (max-width: 760px) { .new-pill { bottom: 20px; } }
 
 /* ---------- 卡片网格 ---------- */
-.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
 @media (max-width: 1180px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
-  display: flex; flex-direction: column; transition: border-color 0.16s; }
-.card:hover { border-color: var(--line-2); }
+.card { background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden;
+  display: flex; flex-direction: column;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+.card:hover { border-color: var(--line-2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06); }
 
-.card-h { display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 12px; border-bottom: 1px solid var(--line); }
+.card-h { display: flex; align-items: center; gap: var(--space-2); height: 44px; padding: 0 var(--space-3); border-bottom: 1px solid var(--line); }
 .logo { width: 18px; height: 18px; flex: none; display: grid; place-items: center; }
 .logo img { width: 18px; height: 18px; object-fit: contain; display: block; }
 .logo img[data-id="zhihu"] { transform: scale(0.9); }
@@ -215,7 +242,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 .logo img[data-id="tieba"] { transform: scale(0.96); }
 .logo img[data-id="netease"] { transform: scale(0.98); }
 .logo img[data-id="bilibili"] { transform: scale(1.02); }
-.card-h h3 { margin: 0; font-size: 13.5px; font-weight: 600; letter-spacing: -0.005em; white-space: nowrap; }
+.card-h h3 { margin: 0; font-size: var(--font-h3); font-weight: 600; letter-spacing: -0.005em; white-space: nowrap; }
 .card-h .kind { font-size: 10px; font-weight: 500; color: var(--dim); border: 1px solid var(--line);
   border-radius: var(--r-sm); padding: 1px 5px; flex: none; }
 .card-h .fresh { margin-left: auto; display: flex; align-items: center; gap: 5px;
@@ -235,14 +262,14 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 /* ---------- 榜单行 ---------- */
 .rows { list-style: none; margin: 0; padding: 3px 0 5px; flex: 1; }
 .row a { display: grid; grid-template-columns: 18px minmax(0, 1fr) 52px; gap: 8px; align-items: center;
-  height: 40px; padding: 0 12px; transition: background 0.12s; }
+  height: 40px; padding: 0 var(--space-3); transition: background 0.12s; }
 .row a:hover { background: var(--card-2); }
 .row .rk { font: 500 12px var(--sans); color: var(--dim); text-align: right; font-variant-numeric: tabular-nums; }
 .row.t1 .rk { color: var(--accent); font-weight: 700; }
 .row.t2 .rk { color: var(--gold); font-weight: 700; }
 .row.t3 .rk { color: var(--mut); font-weight: 700; }
 .row .tt { display: flex; align-items: center; gap: 8px; min-width: 0;
-  font-size: 13.5px; line-height: 1.4; color: var(--ink-2); }
+  font-size: var(--font-sm); line-height: 1.4; color: var(--ink-2); }
 .row .tt .tx { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
 .row a:hover .tt { color: var(--accent); }
 .bdg { display: inline-flex; align-items: center; justify-content: center; height: 15px; min-width: 15px;
