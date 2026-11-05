@@ -89,12 +89,6 @@
     "w": 192,
     "h": 192
   },
-  "hackernews": {
-    "file": "/logos/hackernews.png",
-    "bytes": 3703,
-    "w": 192,
-    "h": 192
-  },
   "github": {
     "file": "/logos/github.png",
     "bytes": 22520,
@@ -116,12 +110,6 @@
   "bilibili": {
     "file": "/logos/bilibili.png",
     "bytes": 30507,
-    "w": 192,
-    "h": 192
-  },
-  "x": {
-    "file": "/logos/x.png",
-    "bytes": 15219,
     "w": 192,
     "h": 192
   },
@@ -147,12 +135,6 @@
     "w": 192,
     "h": 192
   },
-  "producthunt": {
-    "file": "/logos/producthunt.png",
-    "bytes": 7600,
-    "w": 192,
-    "h": 192
-  },
   "sina-tech": {
     "file": "/logos/sina-tech.png",
     "bytes": 28430,
@@ -169,13 +151,6 @@
     "w": 144,
     "h": 144
   },
-  "xhs": {
-    "file": "/logos/xhs.png",
-    "bytes": 12180,
-    "w": 192,
-    "h": 192
-  },
-  "_updated": 1793696049,
   "smzdm": {
     "file": "/logos/smzdm.png",
     "bytes": 32950,
@@ -191,12 +166,6 @@
   "hupu": {
     "file": "/logos/hupu.png",
     "bytes": 27634,
-    "w": 192,
-    "h": 192
-  },
-  "kuaishou": {
-    "file": "/logos/kuaishou.png",
-    "bytes": 23817,
     "w": 192,
     "h": 192
   },
@@ -236,18 +205,6 @@
     "w": 192,
     "h": 192
   },
-  "dm3": {
-    "file": "/logos/dm3.png",
-    "bytes": 25468,
-    "w": 192,
-    "h": 192
-  },
-  "zaobao": {
-    "file": "/logos/zaobao.png",
-    "bytes": 3093,
-    "w": 192,
-    "h": 192
-  },
   "mashdigi": {
     "file": "mashdigi.png",
     "name": "MashDigi"
@@ -259,5 +216,9 @@
   "biggo": {
     "file": "biggo.png",
     "name": "BigGo财经"
+  },
+  "bilibili-hot": {
+    "file": "bilibili-hot.png",
+    "name": "哔哩哔哩热榜"
   }
 }
