@@ -247,5 +247,9 @@
     "bytes": 3093,
     "w": 192,
     "h": 192
+  },
+  "mashdigi": {
+    "file": "mashdigi.png",
+    "name": "MashDigi"
   }
 }
