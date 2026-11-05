@@ -67,3 +67,5 @@ xhs-*
 _patch*.py
 _p*.py
 _dom*.js
+public/app.css.bak-*
+public/app.css.safe-*
